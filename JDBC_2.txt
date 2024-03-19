@@ -1,0 +1,20 @@
+import java.sql
+import java.util.*;
+class JDBC_2{
+	public static void main(String rags[] throws Exception{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		connection con=DriverMAnager.grtConnrction("jdbc:oracle:thin:@localhost:1521:Xe","pat","pat");
+		Statement stmt=con.createstatement();
+		Resultset rs=stmt.executrquery("select*from register);
+		
+		while (rs.next()){
+			System.out.println(rs.getInt(1)+' ');
+			System.out.println(rs.getString(2)+' ');
+			System.out.println(rs.getString(3)+' ');
+			System.out.println(rs.getString(4)+' ');
+			System.out.println(rs.getString(5)+' ');
+			System.out.println(rs.getLong(6)+' ');
+			System.out.println(rs.getString(7)+' ');
+		}
+	}
+}
